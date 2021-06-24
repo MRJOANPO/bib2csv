@@ -62,8 +62,6 @@ def bib2csv(pBibFile, pExport):
         for col in df:
             df[col] = df[col].replace(findPatterns[i], replacePatterns[i], regex=True)
 
-    #df = df["Autoren/Editor"].str.replace(r"{\\\"o}","ö", regex=True)
-    #df.replace(findReplacePatterns, regex=True)
     df.to_csv(pExport, sep=";", encoding="utf8")
 
     
